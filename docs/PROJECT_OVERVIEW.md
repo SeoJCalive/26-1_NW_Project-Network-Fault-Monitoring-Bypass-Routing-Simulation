@@ -73,3 +73,38 @@
 - `GIT_MASTER=1 git diff --check`가 통과한다.
 - `python main.py --duration 8 --scripted`로 scripted scenario smoke를 확인했다.
 - `python -m web_ui.server --web-port 18080 --control-port 19110 --duration 8`로 Web UI runtime smoke를 확인했다.
+
+## 실행과 제어 참고
+
+저장소 루트에서 `python main.py`를 실행하면 터미널 viewer와 필요한 역할 프로세스가 함께 시작된다. 비대화형 환경에서는 scripted scenario를 자동 실행한다. 브라우저 화면은 `python -m web_ui.server --web-port 8080`으로 시작하며, 기본 주소는 `http://127.0.0.1:8080`이다.
+
+역할별 독립 실행에는 `python main.py --role <role>`을 사용한다. `role`에는 `controller`, `host`, `agent`, `relay-r1`, `relay-r2`, `relay-r1b`, `relay-r2b`, `monitor`가 들어간다. 독립 역할, 독립 Controller/UI, 외부 controller client는 기본적으로 동일한 shared control token이 필요하다. 의도적인 무인증 제어는 `--allow-unauthenticated-control`로 명시한다.
+
+외부 controller client 연결 예시는 다음과 같다.
+
+```bash
+python main.py --controller --host 127.0.0.1 --port 9110 --control-token <token>
+```
+
+이미 실행 중인 runtime에 Web UI만 연결할 때는 supervisor를 끈다.
+
+```bash
+python -m web_ui.server --web-port 8080 --no-supervisor --control-token <token>
+```
+
+터미널 viewer에서 `focus <node>`, `overview`, `focus all`로 관찰 대상을 바꿀 수 있다. `<node>`는 `host`, `agent`, `r1`, `r1b`, `r2`, `r2b`, `monitor` 중 하나다. `focus`는 화면 전환이며 node에 CONTROL 메시지를 보내지 않는다.
+
+| 명령 | 관찰 목적 |
+|---|---|
+| `start`, `pause`, `reset` | 전체 역할의 실행 상태 변경 |
+| `start r1`, `pause r1`, `reset r2`, `kill monitor` | 특정 역할의 상태 변경 |
+| `fault cpu on/off`, `fault service on/off`, `fault latency on/off` | Host fault 주입과 해제 |
+| `ackdrop` | ACK 손실 실험 |
+| `delay r1 1.5` 등 | Relay 처리 지연 실험 |
+| `help`, `quit`, `exit` | 명령 확인과 종료 |
+
+standalone role과 `--fixed-node-ports` Web UI 실행의 기본 포트는 Host `9101`, Agent `9102`, R1 `9103`, R2 `9104`, Monitor `9105`, R1B `9106`, R2B `9107`, Controller/UI `9110`이다. 일반 Web UI supervisor 실행은 역할 프로세스에 빈 포트를 동적으로 할당한다.
+
+Web UI의 주요 endpoint는 `GET /`(화면), `GET /api/state`(상태 snapshot), `POST /api/control`(명령), `POST /api/power`(supervisor 역할 전원)이다. Web UI는 터미널 출력을 파싱하지 않는다.
+
+현재 구현의 검증 명령은 `python -m unittest`와 `git diff --check`다.
