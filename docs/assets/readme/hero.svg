@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title description">
+  <title id="title">Network Fault Lab</title>
+  <desc id="description">A host and agent feed two separate relay paths to a monitor. The primary path is teal and the backup path is amber.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop offset="0" stop-color="#101e2c"/>
+      <stop offset="1" stop-color="#0a121c"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#1f6470" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#1f6470" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#26394a" stroke-width=".6"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="360" rx="18" fill="url(#background)"/>
+  <rect width="1280" height="360" rx="18" fill="url(#grid)" opacity=".55"/>
+  <ellipse cx="950" cy="180" rx="360" ry="220" fill="url(#glow)"/>
+  <path d="M640 44v272" stroke="#355064" stroke-width="1"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="56" y="68" fill="#72d8d0" font-size="14" font-weight="700" letter-spacing="3">NETWORK SYSTEMS / SIMULATION</text>
+    <text x="52" y="154" fill="#f2f7f8" font-size="61" font-weight="700" letter-spacing="-2">Network</text>
+    <text x="52" y="220" fill="#f2f7f8" font-size="61" font-weight="700" letter-spacing="-2">Fault Lab</text>
+    <text x="56" y="269" fill="#b9cbd4" font-size="21">Observe the fault. Trace the route.</text>
+    <text x="56" y="313" fill="#72d8d0" font-size="13" font-weight="600" letter-spacing="2">EVENT  /  ACK  /  RETRY  /  FAILOVER</text>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M729 179h29m63 0h87" stroke="#aac2ce" stroke-width="3"/>
+    <path d="M996 111h23m65 0h27" stroke="#65d2c8" stroke-width="3"/>
+    <path d="M996 247h23m65 0h27" stroke="#efbd72" stroke-width="3"/>
+    <path d="M908 179h10q13 0 13-13v-42" stroke="#65d2c8" stroke-width="3"/>
+    <path d="M908 179h10q13 0 13 13v42" stroke="#efbd72" stroke-width="3"/>
+    <path d="M1084 111h14q13 0 13 13v42" stroke="#65d2c8" stroke-width="3"/>
+    <path d="M1084 247h14q13 0 13-13v-42" stroke="#efbd72" stroke-width="3"/>
+  </g>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" text-anchor="middle">
+    <g fill="#172b3a" stroke="#526d7b" stroke-width="1.5">
+      <rect x="667" y="157" width="62" height="44" rx="8"/>
+      <rect x="758" y="157" width="63" height="44" rx="8"/>
+    </g>
+    <g fill="#123837" stroke="#65d2c8" stroke-width="1.5">
+      <rect x="931" y="89" width="65" height="44" rx="8"/>
+      <rect x="1019" y="89" width="65" height="44" rx="8"/>
+    </g>
+    <g fill="#403324" stroke="#efbd72" stroke-width="1.5">
+      <rect x="931" y="225" width="65" height="44" rx="8"/>
+      <rect x="1019" y="225" width="65" height="44" rx="8"/>
+    </g>
+    <rect x="1111" y="157" width="95" height="44" rx="8" fill="#172b3a" stroke="#8eacb9" stroke-width="1.5"/>
+    <g fill="#e8f3f5" font-size="14" font-weight="700">
+      <text x="698" y="185">Host</text>
+      <text x="789" y="185">Agent</text>
+      <text x="963" y="117">R1</text>
+      <text x="1051" y="117">R2</text>
+      <text x="963" y="253">R1B</text>
+      <text x="1051" y="253">R2B</text>
+      <text x="1159" y="185">Monitor</text>
+    </g>
+    <text x="1007" y="76" fill="#65d2c8" font-size="12" font-weight="700" letter-spacing="2">PRIMARY</text>
+    <text x="1007" y="301" fill="#efbd72" font-size="12" font-weight="700" letter-spacing="2">BACKUP</text>
+  </g>
+</svg>
