@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/readme/hero.svg" alt="Network Fault Lab: 기본 경로와 우회 경로를 관찰하는 네트워크 시뮬레이션" width="100%">
+  <img src="docs/assets/readme/hero.svg" alt="Network Systems Lab: 기본 경로와 우회 경로를 관찰하는 네트워크 시뮬레이션" width="100%">
 </p>
 
 <p align="center">
