@@ -16,6 +16,7 @@
 <p align="center">
   <a href="#빠른-실행">빠른 실행</a> ·
   <a href="#어떻게-동작하나">동작 방식</a> ·
+  <a href="#화면-미리-보기">화면</a> ·
   <a href="#관찰할-수-있는-것">관찰 포인트</a> ·
   <a href="docs/PROJECT_OVERVIEW.md">상세 문서</a>
 </p>
@@ -48,6 +49,23 @@ Controller/UI는 이 데이터 경로 밖에서 실행 상태와 장애를 제�
 두 명령 모두 필요한 Host, Agent, Relay, Monitor 역할 프로세스를 함께 시작한다. 브라우저에서는 전체 경로와 노드 상태를 볼 수 있고, 터미널에서는 `viewer>` 프롬프트에서 명령을 입력할 수 있다. 비대화형 터미널에서 `python main.py`를 실행하면 scripted scenario가 자동으로 진행된 뒤 종료된다.
 
 처음에는 브라우저 화면에서 기본 경로를 살펴보고, `pause r1`로 첫 Relay를 멈춰 우회 경로를 관찰해 볼 수 있다. 명령과 상태 해석은 [프로젝트 개요](docs/PROJECT_OVERVIEW.md)에 정리했다.
+
+## 화면 미리 보기
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/779901ce-ab90-4ef4-842b-fd95861bbbe3" alt="Web UI에서 기본 경로와 우회 경로의 노드 상태를 보여주는 전체 화면" width="100%">
+  <br>
+  <sub>전체 경로와 노드 상태를 한 화면에서 관찰한다.</sub>
+</p>
+
+<details>
+<summary>노드 상세 화면 보기</summary>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/92a03cee-ea92-4617-8f4c-f8c9acf73779" alt="Web UI의 노드 상세 정보 패널과 제어 화면" width="100%">
+</p>
+
+</details>
 
 ## 관찰할 수 있는 것
 
